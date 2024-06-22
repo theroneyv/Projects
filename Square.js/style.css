@@ -1,0 +1,13 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	height: 100vh;
+	text-align: center;
+	align-content: center;
+	background: black;
+}
+
+canvas {
+	margin: auto;
+	border: 4px lightgray solid;
+}
