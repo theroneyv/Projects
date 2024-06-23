@@ -1,19 +1,56 @@
 from datetime import datetime
+import platform
+import getpass
+from style import style, colors
 
 now = datetime.now()
-time = now.strftime("%I:%M %P")
-date = now.strftime("%m/%d/%Y")
 
-hour = now.hour
-great = ""
+strtime = now.strftime('%I:%M:%P') 
+strdate = now.strftime('%d/%m/%Y')
 
-if hour < 12:
-    great = "Good morning"
-elif hour < 19:
-    great = "Good afternoon"
+os_info = platform.uname()
+os_name = os_info.system
+os_release = os_info.release
+os_version = os_info.version
+
+username = getpass.getuser()
+hostname = platform.node()
+
+cpu_info = platform.processor()
+
+greet = '' 
+
+if now.hour < 12: 
+    greet = 'Good morning'
+elif now.hour < 19:
+    greet = 'Good afternoon'
 else:
-    great = "Good evening"
+    greet = 'Good evening'
 
-print("\033[1;32m    ~   \033[0m" + time)
-print("\033[1;32m  C|_|  \033[0m" + date)
-print("\033[1;32m   ---  \033[0m" + great + ", take a coffee!" + "\n")
+strgreet = f'{greet}, take a coffe!'
+strheader = f'{username}@{hostname}'
+strheaderline = '-' * len(strheader)
+
+strcolors = style('    ', 7, colors['yellow']) + style('    ', 7, colors['blue']) + style('    ', 7, colors['red'])
+
+strshow = f'''
+{strheader}
+{strheaderline}
+OS: {os_name} {os_release}
+CPU: {cpu_info}
+  
+  ~   {strdate}
+C|_|  {strtime}
+ ---  {strgreet}
+
+{strcolors}
+'''
+
+def show():
+    return strshow
+
+def main():
+    print(show())
+
+if __name__ == '__main__':
+    main()
