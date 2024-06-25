@@ -34,9 +34,3 @@ body {
 #click-button:active {
 	transform: scale(0.95);
 }
-
-#footer {
-	position: absolute;
-	bottom: 10px;
-	opacity: 0%;
-}
