@@ -1,0 +1,42 @@
+* {
+	font-family: Roboto;
+}
+
+body {
+	margin: 0;
+}
+
+#app-container {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#click-button {
+	margin: auto;
+	padding: 14px;
+	min-width: 120px;
+	min-height: 120px;
+	text-align: center;
+	font-size: 4em;
+	font-weight: bold;
+	border: 4px solid gray;
+	border-radius: 100%;
+	transition: all 95ms;
+}
+
+#click-button:hover {
+	cursor: pointer;
+	transform: scale(1.15);
+}
+
+#click-button:active {
+	transform: scale(0.95);
+}
+
+#footer {
+	position: absolute;
+	bottom: 10px;
+	opacity: 0%;
+}
