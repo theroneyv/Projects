@@ -1,16 +1,16 @@
 const CLICK_BUTTON = document.getElementById('click-button')
-const BLOP_SOUND = document.getElementById('blop-sound')
 
-BLOP_SOUND.volume = 0.15
-BLOP_SOUND.playbackRate = 1
+const BLOP_SOUND = new Howl({
+  src: ['blop.mp3'],
+  volume: 0.25,
+});
 
 let score = 0;
 
 CLICK_BUTTON.onclick = function() {
 	// reproduce sound
-    BLOP_SOUND.currentTime = 0;
-	BLOP_SOUND.play()
-
+	BLOP_SOUND.play();
+    
 	// increase score
 	score++
 	CLICK_BUTTON.value = score
