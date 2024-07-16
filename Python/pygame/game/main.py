@@ -6,6 +6,7 @@ pygame.mixer.init()
 width = 400
 height = 640
 screen = pygame.display.set_mode((width, height))
+title = pygame.display.set_caption('Juego')
 clock = pygame.time.Clock()
 running = True
 deltatime = 0
